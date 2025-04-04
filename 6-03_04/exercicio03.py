@@ -29,18 +29,6 @@ for i in data_raw:
     else:
         data_f2.append(i)
 
-Q1 = np.percentile(data_p, 25, method="averaged_inverted_cdf")
-Q2 = np.percentile(data_p, 50, method="averaged_inverted_cdf")
-Q3 = np.percentile(data_p, 75, method="averaged_inverted_cdf")
-
-dq = Q3 - Q1
-vmin = min(data_p)
-vmax = max(data_p)
-
-LI = max(vmin, Q1 - 1.5*dq)
-LS = min(vmax, Q3 + 1.5*dq)
-
-
 #(4) Resultados e visualizações
 print(f"Ramos com mais de 10%:\n {data_f}\n"
       f"Ramos com menos de 10%:\n {data_f2}\n"
